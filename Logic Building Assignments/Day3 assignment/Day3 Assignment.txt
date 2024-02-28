@@ -132,7 +132,15 @@ int number = 5;
 	
 	System.out.println("Factorial of "+factorial);
 
-Q15. can be done with string using string length
+Q15. 
+	int number = 9125, sum;
+	int userNum = number;
+		
+	for(sum = 0; number!=0; number/=10){
+		sum+=number%10;
+	}
+	
+	System.out.println("Sum of digits of "+userNum+" = "+sum);
 
 Q16. 
 int number = 127;
