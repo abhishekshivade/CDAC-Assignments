@@ -1,0 +1,253 @@
+Q1.
+
+int i = 10; 
+
+while(i<5){
+i++;
+System.out.println(i);
+}
+
+value of I should be less than 5 when initializing
+
+Q2.
+int marks = 50;
+if(marks>40){
+System.out.println("Passed");
+}
+else
+{
+System.out.println("Failed");
+}
+
+Q3. 10
+
+Q4.
+
+int number = 10;
+
+for(number; number<15;number++){
+System.out.println("*");
+}
+
+Q5.
+int i = 11;
+while(i<10){
+	i++;
+	int j = 1;
+	
+	if(j==0){
+		//System.out.println("in if");
+		break;
+	}
+	else if(j==1){
+		//System.out.println("in else");
+		continue;
+	}
+
+	System.out.println(i);
+}
+	
+System.out.println("finished");
+
+ It will print finished.
+
+Q6.
+
+for(int i = 10;i>=0; i--){
+
+		switch(i){
+			case 10:
+				System.out.println("Congragulation you have full marks");
+				break;
+
+			case 9:
+				System.out.println("Congragulation you have almost full marks");
+				break;
+
+			case 8:
+				System.out.println("Congragulation you have done very well");
+				break;
+
+			case 7:
+				System.out.println("Congragulation you have done well");
+				break;
+
+			case 6:
+				System.out.println("You are doing alright but could study more");
+				break;
+
+			case 5:
+				System.out.println("You got only half marks, you need to do more");
+				break;
+
+			case 4:
+				System.out.println("You got less than half marks, you need to do more");
+				break;
+			
+			case 3:
+				System.out.println("You have got low marks, see a teacher");
+				break;
+
+			case 2:
+				System.out.println("You have got very low marks, see a teacher");
+				break;
+
+			case 1:
+				System.out.println("You only got 1 mark, see a teacher");
+				break;
+
+			default:
+				System.out.println("You have failed abysmally");
+				break;
+
+Q7. It will ask and print user input number at least once even if it is 0 and untill user enters 0.
+
+Q8. print Hello+name
+
+Q9. for(int i=11;i<20;i++){
+	System.out.println(i)
+	}
+
+Q10. For if statement instead of checking condition by equalto using assignment operator.
+
+Q11. can not be done with for loop.
+
+Q12. i will be printed only when i is less than 10 or equal to 15
+
+Q13.
+
+	int number = 3;
+	
+		for(int i=1; i<=10;i++){
+			System.out.println(number+" x "+i+" = "+number*i);
+		}
+
+Q14.
+int number = 5;
+	int factorial = 5;
+	
+	for(int i = number-1; i>0; i--){
+		factorial*=i;
+	}
+	
+	System.out.println("Factorial of "+factorial);
+
+Q15. can be done with string using string length
+
+Q16. 
+int number = 127;
+		
+		if(number%2==0){
+			System.out.println("number is divisable by 2");
+		}
+		else if(number%3==0){
+			System.out.println("number is divisable by 3");
+		}
+		else {
+			System.out.println("number is prime");
+		}
+	
+Q17.
+
+		int i = 10;
+		
+		switch(i){
+			case 1:
+				System.out.println("Jan");
+				break;
+
+			case 2:
+				System.out.println("Feb");
+				break;
+
+			case 3:
+				System.out.println("March");
+				break;
+
+			case 4:
+				System.out.println("April");
+				break;
+
+			case 5:
+				System.out.println("May");
+				break;
+
+			case 6:
+				System.out.println("June");
+				break;
+
+			case 7:
+				System.out.println("July");
+				break;
+			
+			case 8:
+				System.out.println("Aug");
+				break;
+
+			case 9:
+				System.out.println("Sep");
+				break;
+
+			case 10:
+				System.out.println("Oct");
+				break;
+
+			case 11:
+				System.out.println("Nov");
+				break;
+
+			case 12:
+				System.out.println("Dec");
+				break;
+		}
+
+Q18. 
+
+int firstNumber = 6;
+		int secondNumber = 3;
+
+		System.out.println("Choose an operation :");
+		System.out.println("1. Addition");
+		System.out.println("2. Subtraction");
+		System.out.println("3. Multiplication");
+		System.out.println("4. Division");
+
+		int result;
+		
+		for(int choice = 1; choice <=4 ; choice++){
+			switch(choice){
+				case 1:
+					result = firstNumber+secondNumber;
+					System.out.println(firstNumber+" + "+secondNumber+" = "+result);
+					break;
+
+				case 2:
+					result = firstNumber-secondNumber;
+					System.out.println(firstNumber+" - "+secondNumber+" = "+result);
+					break;
+
+				case 3:
+					result = firstNumber*secondNumber;
+					System.out.println(firstNumber+" * "+secondNumber+" = "+result);
+					break;
+
+				case 4:
+					result = firstNumber/secondNumber;
+					System.out.println(firstNumber+" / "+secondNumber+" = "+result);
+					break;
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
