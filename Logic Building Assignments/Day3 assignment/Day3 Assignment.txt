@@ -136,24 +136,35 @@ Q15.
 	int number = 9125, sum;
 	int userNum = number;
 		
-	for(sum = 0; number!=0; number/=10){
+	/*for(sum = 0; number!=0; number/=10){
 		sum+=number%10;
-	}
+	}*/
 	
+	
+	do{
+		sum+=number%10;
+		number/=10;
+	}while(number!=0);
+
 	System.out.println("Sum of digits of "+userNum+" = "+sum);
 
 Q16. 
-int number = 127;
-		
-		if(number%2==0){
-			System.out.println("number is divisable by 2");
-		}
-		else if(number%3==0){
-			System.out.println("number is divisable by 3");
-		}
-		else {
-			System.out.println("number is prime");
-		}
+
+    int num = 29;
+    boolean flag = false;
+    for (int i = 2; i <= num / 2; ++i) {
+      if (num % i == 0) {
+        flag = true;
+        break;
+      }
+    }
+
+    if (!flag)
+      System.out.println(num + " is a prime number.");
+    else
+      System.out.println(num + " is not a prime number.");
+  }
+
 	
 Q17.
 
