@@ -1,0 +1,323 @@
+Q1
+Complete the logic in the following Java Program, which is designed to whether the given four numbers are equal or not.
+import java.util.Scanner;
+public class Solution{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int num1 = in.nextInt();
+        int num2 = in.nextInt();
+        int num3 = in.nextInt();
+        int num4 = in.nextInt();
+        //Write your logic here
+        
+        if(num1==num2 && num1==num3 && num1==num4){
+            System.out.println("Equal");
+        }else{
+            System.out.println("Not Equal");
+        }
+    }
+} 
+
+Q2
+Complete the logic in the following Java Program, which is designed to display the product of given two numbers.
+import java.util.Scanner;
+ 
+public class Exercise5 {
+ public static void main(String[] args) {
+  Scanner in = new Scanner(System.in);
+  int num1 = in.nextInt();
+  int num2 = in.nextInt();
+   //Write your logic here
+   //print product of num1 and num2
+   
+   System.out.println(num1*num2);
+ }
+}
+
+Q3
+Complete the logic in the following Java Program, which is designed to display the table up to 10 of given number.
+import java.util.Scanner;
+public class Exercise {
+ public static void main(String[] args) {
+  Scanner in = new Scanner(System.in);
+  int num1 = in.nextInt();
+  //Write your logic here
+  
+  for(int i=1;i<=10;i++){
+    System.out.println(num1*i);
+  }
+ }
+}
+
+Q4
+Complete the logic in the following Java Program, which is designed to display the average of the given three numbers.
+import java.util.Scanner;
+public class Exercise{
+ public static void main(String[] args) {
+  Scanner in = new Scanner(System.in);
+  int num1 = in.nextInt();
+  int num2 = in.nextInt();
+  int num3 = in.nextInt();
+  //Write your logic here
+  int sum = num1+num2+num3;
+  System.out.println(sum/3);
+ }
+} 
+
+Q5
+Complete the logic of the following java program that accepts two double variables and test if both strictly between 0 and 1, if yes program print true otherwise false.
+import java.util.Scanner;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        double n1 = in.nextDouble();
+        double n2 = in.nextDouble();
+        //Write your logic here
+        
+        if(n1>0 && n1<1.00 && n2>0 && n2<1.00){
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }
+        
+    }
+} 
+
+Q6
+Complete the given Java program to get a number from the user and print whether it is positive or negative.
+
+import java.util.Scanner;
+public class Exercise{
+  public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int input = in.nextInt();
+        //write your logic here
+        if(input>=0){
+            System.out.println("Positive");
+        }else{
+            System.out.println("Negative");
+        }
+    }
+}
+
+Q7  
+Complete the given Java program that takes three numbers from the user and prints the greatest number.
+
+import java.util.Scanner;
+public class Exercise{
+  public static void main(String[] args) {
+  Scanner in = new Scanner(System.in);
+  int num1 = in.nextInt();
+  int num2 = in.nextInt();
+  int num3 = in.nextInt();
+  //Write your logic here
+  
+  if(num1>num2){
+      System.out.println(num1);
+  }else if(num2>num3){
+      System.out.println(num2);
+  }else{
+      System.out.println(num3);
+  }
+ }
+}
+
+Q8
+Complete the given Java program that takes a number between 1 and 7 from user, and it displays the weekday name.
+
+import java.util.Scanner;
+public class Exercise{
+  public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int day = in.nextInt();
+        //Write your logic here
+        if(day==1)System.out.println("Monday");
+        if(day==2)System.out.println("Tuesday");
+        if(day==3)System.out.println("Wednesday");
+        if(day==4)System.out.println("Thursday");
+        if(day==5)System.out.println("Friday");
+        if(day==6)System.out.println("Saturday");
+        if(day==7)System.out.println("Sunday");
+    }
+}
+
+Q9
+
+Complete the given Java program that reads two floating-point numbers and tests whether they are the same up to three decimal places.
+
+import java.util.Scanner;
+public class Exercise{
+  public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        double x = in.nextDouble();
+        double y = in.nextDouble();
+        //Write your logic here
+        
+        if(x==y){
+            System.out.println("Equal");
+        }else{
+            System.out.println("Not Equal");
+        }
+    }
+}
+
+Q10
+
+omplete the given Java program to find the number of days in a month.
+
+import java.util.Scanner;
+public class Exercise{
+  public static void main(String[] strings) {
+        Scanner input = new Scanner(System.in);
+        int number_Of_DaysInMonth = 0; 
+        String MonthOfName = "Unknown";
+        int month = input.nextInt();
+        //Write your logic here
+        if(month==1){
+            MonthOfName="January";
+            number_of_DaysInMOnth=31;
+        }
+        if(month==2){
+            MonthOfName="Februry";
+            number_of_DaysInMOnth=28;
+        }
+        if(month==3){
+            MonthOfName="March";
+            number_of_DaysInMOnth=31;
+        }
+        if(month==4){
+            MonthOfName="April";
+            number_of_DaysInMOnth=30;
+        }
+        if(month==5){
+            MonthOfName="May";
+            number_of_DaysInMOnth=31;
+        }
+        if(month==6){
+            MonthOfName="June";
+            number_of_DaysInMOnth=30;
+        }
+        if(month==7){
+            MonthOfName="July";
+            number_of_DaysInMOnth=31;
+        }
+        if(month==8){
+            MonthOfName="August";
+            number_of_DaysInMOnth=31;
+        }
+        if(month==9){
+            MonthOfName="September";
+            number_of_DaysInMOnth=30;
+        }
+        if(month==10){
+            MonthOfName="October";
+            number_of_DaysInMOnth=31;
+        }
+        if(month==11){
+            MonthOfName="November";
+            number_of_DaysInMOnth=30;
+        }
+        if(month==12){
+            MonthOfName="December";
+            number_of_DaysInMOnth=31;
+        }
+  }
+}
+
+Q11
+Complete the given Java program that requires the user to enter a single character from the alphabet. Print Vowel or Consonant, depending on user input. If the user input is not a letter (between a and z or A and Z), or is a string of length > 1, print an error message.
+
+import java.util.Scanner;
+public class Exercise{
+  public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        String input = in.next().toLowerCase();
+        //Write your logic here
+        if(input.length()>1){
+            System.out.println("wrong input");
+        }else{
+            if(input.contains("a") || input.contains("e") || input.contains("i") || input.contains("o") || input.contains("u") ){
+                System.out.println("Vowel");
+            }else{
+                System.out.println("Consonant");
+            }
+        }
+    }
+}
+
+Q12
+Complete the given Java program that takes a year from the user and prints whether it is a leap year or not.
+
+import java.util.Scanner;
+public class Exercise{
+  public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int year = in.nextInt();
+        //Write your logic here
+        
+        if(year%4 == 0){
+            System.out.println("Leap Year");
+        }else{
+            System.out.println("Not Leap Year");
+        }
+    }
+}
+
+Q13
+
+Complete the following Java program to display the first n natural numbers.
+
+import java.util.Scanner;
+public class Exercise{
+  public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int num = in.nextInt();
+    	for(int i=1;i<=num;i++)
+    	{      
+    		System.out.println(i);
+    	}
+    }
+}
+
+Q14
+
+Complete the following Java program to display the cube of the given number up to an integer.
+
+import java.util.Scanner;
+public class Exercise{
+   public static void main(String[] args)
+        {
+            int n;
+            Scanner in = new Scanner(System.in);
+            n = in.nextInt();
+            //Write your logic here
+            System.out.println(n*n*n);
+        }
+}
+
+Q15
+Complete the given Java program that displays the sum of n odd natural numbers.
+import java.util.Scanner;
+public class Exercise{
+
+public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int i,n,sum=0;
+        n = in.nextInt();
+        //Write your logic here
+        i=1;
+        for(int j=0;j<n;j++){
+            if(i%2!=0){
+                sum+=i;
+                i+=2;
+            }
+        }
+        System.out.println(sum);
+    }
+}

@@ -1,0 +1,42 @@
+Part A
+
+Q1  -> echo will print text in quote -> Hello World
+Q2  -> name="Productive" will store Productive in name variable
+Q3  -> touch will create file.txt as a text file
+Q4  -> ls -a will list all file from directory
+Q5  -> rm file.txt will delete file
+Q6  -> cp will content of file1.txt into file2.txt, it will over write file2.txt
+Q7  -> mv will move file.txt to directory named directory
+Q8  -> chmod will set permission of read, write and execute for script.sh file
+Q9  -> grep will search pattern in file.txt file
+Q10 -> kill will process of given pid
+Q11 -> mkdir will make mydir then cd will enter in mydir then touch will create file.txt then echo "Hello, World" > will write Hello, world in file.txt then cat will display file.txt content
+Q12 -> ls -l will list files in directory and grep .txt will filter .txt files
+Q13 -> cat displays will content of .txt file2.txt, sort will sort that content and uniq will filter duplicate content
+Q114 -> ls -l lists the content if directory and grep ^d will filter and show contents starting with d only
+Q15 -> grep -r will search pattern word recurcievely in given directory path
+Q16 -> cat displays will content of .txt file2.txt, sort will sort that content and uniq -d will show dupliate lines only
+Q17 -> chmod will set permissions for given file.txt, 644 represent read write permission for user/owner and read permission for group and others.
+Q18 -> cp -r will copy all the content of source directory to destination directory
+Q19 -> find will search .txt file in given path
+Q20 -> chmod u+x sets execute permission for user/owner
+Q21 -> echo $path shows directories where executable files are stored
+
+
+Part B
+1)	Q1 -> true
+	Q2 -> true
+	Q3 -> false
+	Q4 -> true
+	Q5 -> true
+	Q6 -> true
+	Q7 -> true
+	Q8 -> true
+
+2)	Q1 -> chmod is used to change permission not chmodx
+	Q2 -> cp is used to copy files and directories not cpy
+	Q3 -> touch is used to create a file not mkfile
+	Q4 -> cat is used to concatenate files not catx
+	Q5 -> mv is used to rename files
+
+

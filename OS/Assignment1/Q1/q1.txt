@@ -1,0 +1,587 @@
+abhishek_shivade@DESKTOP-EHJ0T9T:~$ ls
+CDAC24  user1  user2
+abhishek_shivade@DESKTOP-EHJ0T9T:~$ cd CDAC24/
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24$ mkdir LinuxAssignment
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24$ cd LinuxAssignment/
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ touch file.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ rm file.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ rm file1.txt
+rm: cannot remove 'file1.txt': No such file or directory
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ touch file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cat file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ mkdir docs
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cp file1.txt /docs
+cp: cannot create regular file '/docs': Permission denied
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cp file1.txt docs
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cd docs/
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls
+file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ mv file1.txt  file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls
+file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ chmod +rwx +r-wx +r-wx file2.txt
+chmod: cannot access '+r-wx': No such file or directory
+chmod: cannot access '+r-wx': No such file or directory
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ chmod +rwx +r +r file2.txt
+chmod: cannot access '+r': No such file or directory
+chmod: cannot access '+r': No such file or directory
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ chmod +rwx +
+r file2.txt
+chmod: cannot access '+r': No such file or directory
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ chmod 744 file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls -l
+total 0
+-rwxr--r-- 1 abhishek_shivade abhishek_shivade 0 Mar  7 17:56 file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ chmod +rwx f
+ile2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls -l
+total 0
+-rwxr-xr-x 1 abhishek_shivade abhishek_shivade 0 Mar  7 17:56 file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ chmod 744 file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls -l
+total 0
+-rwxr--r-- 1 abhishek_shivade abhishek_shivade 0 Mar  7 17:56 file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ chown $USER:$OTHER file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls -l
+total 0
+-rwxr--r-- 1 abhishek_shivade abhishek_shivade 0 Mar  7 17:56 file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ man ls
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls *.txt
+file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ cat > file2.txt
+Hello Ubuntu.........
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ cd ..
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cls
+Command 'cls' not found, but there are 18 similar ones.
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls *.txt
+file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls *.txt -a
+file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls *.txt -R
+file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls -R *.txt
+file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ find . -name "*.t
+xt"
+./docs/file2.txt
+./file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ grep "hello"
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cd ..
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24$ cat LinuxAssignment | greap "Hello"
+cat: LinuxAssignment: Is a directory
+Command 'greap' not found, did you mean:
+  command 'grep' from deb grep (3.7-1build1)
+  command 'grap' from deb grap (1.46-1)
+Try: sudo apt install <deb name>
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24$ cd LinuxAssignment/
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cat greap "Hello"
+cat: greap: No such file or directory
+cat: Hello: No such file or directory
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ greap "Hello"
+Command 'greap' not found, did you mean:
+  command 'grep' from deb grep (3.7-1build1)
+  command 'grap' from deb grap (1.46-1)
+Try: sudo apt install <deb name>
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ sudo apt install
+greap
+[sudo] password for abhishek_shivade:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package greap
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ greap "Hello"
+Command 'greap' not found, did you mean:
+  command 'grap' from deb grap (1.46-1)
+  command 'grep' from deb grep (3.7-1build1)
+Try: sudo apt install <deb name>
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ sudo apt install grap
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  fontconfig fontconfig-config fonts-droid-fallback fonts-noto-mono
+  fonts-urw-base35 ghostscript groff gsfonts hicolor-icon-theme
+  imagemagick imagemagick-6-common imagemagick-6.q16 libaom3
+  libavahi-client3 libavahi-common-data libavahi-common3 libcairo2
+  libcups2 libdatrie1 libdav1d5 libde265-0 libdeflate0 libdjvulibre-text
+  libdjvulibre21 libfftw3-double3 libfontconfig1 libfreetype6 libgomp1
+  libgraphite2-3 libgs9 libgs9-common libharfbuzz0b libheif1 libice6
+  libidn12 libijs-0.35 libilmbase25 libjbig0 libjbig2dec0 libjpeg-turbo8
+  libjpeg8 libjxr-tools libjxr0 liblcms2-2 liblqr-1-0 libltdl7
+  libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  libnetpbm10 libopenexr25 libopenjp2-7 libpango-1.0-0 libpangocairo-1.0-0
+  libpangoft2-1.0-0 libpaper-utils libpaper1 libpixman-1-0 libsm6
+  libthai-data libthai0 libtiff5 libwebp7 libwebpdemux2 libwebpmux3
+  libwmflite-0.2-7 libx265-199 libxaw7 libxcb-render0 libxcb-shm0 libxmu6
+  libxpm4 libxrender1 libxt6 netpbm poppler-data psutils x11-common
+Suggested packages:
+  fonts-noto fonts-freefont-otf | fonts-freefont-ttf fonts-texgyre
+  ghostscript-x imagemagick-doc autotrace cups-bsd | lpr | lprng enscript
+  ffmpeg gimp gnuplot grads graphviz hp2xx html2ps libwmf-bin mplayer
+  povray radiance sane-utils texlive-base-bin transfig ufraw-batch
+  xdg-utils cups-common libfftw3-bin libfftw3-dev liblcms2-utils inkscape
+  poppler-utils fonts-japanese-mincho | fonts-ipafont-mincho
+  fonts-japanese-gothic | fonts-ipafont-gothic fonts-arphic-ukai
+  fonts-arphic-uming fonts-nanum
+The following NEW packages will be installed:
+  fontconfig fontconfig-config fonts-droid-fallback fonts-noto-mono
+  fonts-urw-base35 ghostscript grap groff gsfonts hicolor-icon-theme
+  imagemagick imagemagick-6-common imagemagick-6.q16 libaom3
+  libavahi-client3 libavahi-common-data libavahi-common3 libcairo2
+  libcups2 libdatrie1 libdav1d5 libde265-0 libdeflate0 libdjvulibre-text
+  libdjvulibre21 libfftw3-double3 libfontconfig1 libfreetype6 libgomp1
+  libgraphite2-3 libgs9 libgs9-common libharfbuzz0b libheif1 libice6
+  libidn12 libijs-0.35 libilmbase25 libjbig0 libjbig2dec0 libjpeg-turbo8
+  libjpeg8 libjxr-tools libjxr0 liblcms2-2 liblqr-1-0 libltdl7
+  libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  libnetpbm10 libopenexr25 libopenjp2-7 libpango-1.0-0 libpangocairo-1.0-0
+  libpangoft2-1.0-0 libpaper-utils libpaper1 libpixman-1-0 libsm6
+  libthai-data libthai0 libtiff5 libwebp7 libwebpdemux2 libwebpmux3
+  libwmflite-0.2-7 libx265-199 libxaw7 libxcb-render0 libxcb-shm0 libxmu6
+  libxpm4 libxrender1 libxt6 netpbm poppler-data psutils x11-common
+0 upgraded, 79 newly installed, 0 to remove and 79 not upgraded.
+Need to get 38.9 MB of archives.
+After this operation, 143 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-droid-fallback all 1:6.0.1r16-1.1build1 [1805 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgomp1 amd64 12.3.0-1ubuntu1~22.04 [126 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 libfftw3-double3 amd64 3.3.8-2ubuntu8 [770 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libfreetype6 amd64 2.11.1+dfsg-1ubuntu0.2 [389 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-urw-base35 all 20200910-1 [6367 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 fontconfig-config all 2.13.1-4.2ubuntu5 [29.1 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 libfontconfig1 amd64 2.13.1-4.2ubuntu5 [131 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libaom3 amd64 3.3.0-1 [1748 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libdav1d5 amd64 0.9.2-1 [463 kB]
+Ign:10 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libde265-0 amd64 1.0.8-1ubuntu0.2
+Get:11 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libx265-199 amd64 3.5-2 [1170 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libheif1 amd64 1.12.0-2build1 [196 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libjbig0 amd64 2.1-3.1ubuntu0.22.04.1 [29.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg-turbo8 amd64 2.1.2-0ubuntu1 [134 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg8 amd64 8c-2ubuntu10 [2264 B]
+Get:16 http://archive.ubuntu.com/ubuntu jammy/main amd64 liblcms2-2 amd64 2.12~rc1-2build2 [159 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy/universe amd64 liblqr-1-0 amd64 0.4.2-2.1 [27.7 kB]
+Get:18 http://archive.ubuntu.com/ubuntu jammy/main amd64 libltdl7 amd64 2.4.6-15build2 [39.6 kB]
+Get:19 http://archive.ubuntu.com/ubuntu jammy/main amd64 libopenjp2-7 amd64 2.4.0-6 [158 kB]
+Get:20 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdeflate0 amd64 1.10-2 [70.9 kB]
+Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwebp7 amd64 1.2.2-2ubuntu0.22.04.2 [206 kB]
+Err:10 http://security.ubuntu.com/ubuntu jammy-updates/universe amd64 libde265-0 amd64 1.0.8-1ubuntu0.2
+  404  Not Found [IP: 91.189.91.81 80]
+Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtiff5 amd64 4.3.0-6ubuntu0.8 [185 kB]
+Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwebpdemux2 amd64 1.2.2-2ubuntu0.22.04.2 [9964 B]
+Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwebpmux3 amd64 1.2.2-2ubuntu0.22.04.2 [20.5 kB]
+Get:25 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 imagemagick-6-common all 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [63.6 kB]
+Get:26 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libmagickcore-6.q16-6 amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [1788 kB]
+Get:27 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libmagickwand-6.q16-6 amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [328 kB]
+Get:28 http://archive.ubuntu.com/ubuntu jammy/main amd64 poppler-data all 0.4.11-1 [2171 kB]
+Get:29 http://archive.ubuntu.com/ubuntu jammy/main amd64 fontconfig amd64 2.13.1-4.2ubuntu5 [177 kB]
+Get:30 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-noto-mono all 20201225-1build1 [397 kB]
+Get:31 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgs9-common all 9.55.0~dfsg1-0ubuntu5.6 [751 kB]
+Get:32 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libavahi-common-data amd64 0.8-5ubuntu5.2 [23.8 kB]
+Get:33 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libavahi-common3 amd64 0.8-5ubuntu5.2 [23.9 kB]
+Get:34 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libavahi-client3 amd64 0.8-5ubuntu5.2 [28.0 kB]
+Get:35 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libcups2 amd64 2.4.1op1-1ubuntu4.7 [264 kB]
+Get:36 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libidn12 amd64 1.38-4ubuntu1 [60.0 kB]
+Get:37 http://archive.ubuntu.com/ubuntu jammy/main amd64 libijs-0.35 amd64 0.35-15build2 [16.5 kB]
+Get:38 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjbig2dec0 amd64 0.19-3build2 [64.7 kB]
+Get:39 http://archive.ubuntu.com/ubuntu jammy/main amd64 libpaper1 amd64 1.1.28build2 [13.8 kB]
+Get:40 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgs9 amd64 9.55.0~dfsg1-0ubuntu5.6 [5031 kB]
+Get:41 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 ghostscript amd64 9.55.0~dfsg1-0ubuntu5.6 [49.4 kB]
+Get:42 http://archive.ubuntu.com/ubuntu jammy/universe amd64 grap amd64 1.46-1 [129 kB]
+Get:43 http://archive.ubuntu.com/ubuntu jammy/main amd64 x11-common all 1:7.7+23ubuntu2 [23.4 kB]
+Get:44 http://archive.ubuntu.com/ubuntu jammy/main amd64 libice6 amd64 2:1.0.10-1build2 [42.6 kB]
+Get:45 http://archive.ubuntu.com/ubuntu jammy/main amd64 libsm6 amd64 2:1.2.3-1build2 [16.7 kB]
+Get:46 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxt6 amd64 1:1.2.1-1 [177 kB]
+Get:47 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxmu6 amd64 2:1.1.3-3 [49.6 kB]
+Get:48 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxpm4 amd64 1:3.5.12-1ubuntu0.22.04.2 [36.7 kB]
+Get:49 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxaw7 amd64 2:1.0.14-1 [191 kB]
+Get:50 http://archive.ubuntu.com/ubuntu jammy/universe amd64 groff amd64 1.22.4-8build1 [4104 kB]
+Get:51 http://archive.ubuntu.com/ubuntu jammy/universe amd64 gsfonts all 1:8.11+urwcyr1.0.7~pre44-4.5 [3120 kB]
+Get:52 http://archive.ubuntu.com/ubuntu jammy/main amd64 hicolor-icon-theme all 0.17-2 [9976 B]
+Get:53 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 imagemagick-6.q16 amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [224 kB]
+Get:54 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 imagemagick amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [14.6 kB]
+Get:55 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpixman-1-0 amd64 0.40.0-1ubuntu0.22.04.1 [264 kB]
+Get:56 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-render0 amd64 1.14-3ubuntu3 [16.4 kB]
+Get:57 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-shm0 amd64 1.14-3ubuntu3 [5780 B]
+Get:58 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxrender1 amd64 1:0.9.10-1build4 [19.7 kB]
+Get:59 http://archive.ubuntu.com/ubuntu jammy/main amd64 libcairo2 amd64 1.16.0-5ubuntu2 [628 kB]
+Get:60 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdatrie1 amd64 0.2.13-2 [19.9 kB]
+Get:61 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdjvulibre-text all 3.5.28-2build2 [50.9 kB]
+Get:62 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdjvulibre21 amd64 3.5.28-2build2 [624 kB]
+Get:63 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgraphite2-3 amd64 1.3.14-1build2 [71.3 kB]
+Get:64 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libharfbuzz0b amd64 2.7.4-1ubuntu3.1 [352 kB]
+Get:65 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libilmbase25 amd64 2.5.7-2 [175 kB]
+Get:66 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjxr0 amd64 1.2~git20170615.f752187-5 [174 kB]
+Get:67 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjxr-tools amd64 1.2~git20170615.f752187-5 [16.0 kB]
+Get:68 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libopenexr25 amd64 2.5.7-1 [780 kB]
+Get:69 http://archive.ubuntu.com/ubuntu jammy/main amd64 libthai-data all 0.1.29-1build1 [162 kB]
+Get:70 http://archive.ubuntu.com/ubuntu jammy/main amd64 libthai0 amd64 0.1.29-1build1 [19.2 kB]
+Get:71 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpango-1.0-0 amd64 1.50.6+ds-2ubuntu1 [230 kB]
+Get:72 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpangoft2-1.0-0 amd64 1.50.6+ds-2ubuntu1 [54.0 kB]
+Get:73 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpangocairo-1.0-0 amd64 1.50.6+ds-2ubuntu1 [39.8 kB]
+Get:74 http://archive.ubuntu.com/ubuntu jammy/main amd64 libwmflite-0.2-7 amd64 0.2.12-5ubuntu1 [68.9 kB]
+Get:75 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libmagickcore-6.q16-6-extra amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [70.1 kB]
+Get:76 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libnetpbm10 amd64 2:10.0-15.4 [59.1 kB]
+Get:77 http://archive.ubuntu.com/ubuntu jammy/main amd64 libpaper-utils amd64 1.1.28build2 [8674 B]
+Get:78 http://archive.ubuntu.com/ubuntu jammy/universe amd64 netpbm amd64 2:10.0-15.4 [1007 kB]
+Get:79 http://archive.ubuntu.com/ubuntu jammy/universe amd64 psutils amd64 1.17.dfsg-4 [56.2 kB]
+Fetched 38.6 MB in 16s (2341 kB/s)
+E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/universe/libd/libde265/libde265-0_1.0.8-1ubuntu0.2_amd64.deb  404  Not Found [IP: 91.189.91.81 80]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ greap "Hello"
+Command 'greap' not found, did you mean:
+  command 'grap' from deb grap (1.46-1)
+  command 'grep' from deb grep (3.7-1build1)
+Try: sudo apt install <deb name>
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ grap "Hello"
+Command 'grap' not found, but can be installed with:
+sudo apt install grap
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ man find
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cd docs/
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls
+file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ grep -l Hell
+o file2.txt
+file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ grep Hello f
+ile2.txt
+Hello Ubuntu.........
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ date
+Thu Mar  7 18:52:37 IST 2024
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ipconifg -a
+ipconifg: command not found
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ifconifg -a
+Command 'ifconifg' not found, did you mean:
+  command 'ifconfig' from deb net-tools (1.60+git20181103.0eebece-1ubuntu5)
+Try: sudo apt install <deb name>
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ hostname -l
+hostname: invalid option -- 'l'
+Usage: hostname [-b] {hostname|-F file}         set host name (from file)
+       hostname [-a|-A|-d|-f|-i|-I|-s|-y]       display formatted name
+       hostname                                 display host name
+
+       {yp,nis,}domainname {nisdomain|-F file}  set NIS domain name (from file)
+       {yp,nis,}domainname                      display NIS domain name
+
+       dnsdomainname                            display dns domain name
+
+       hostname -V|--version|-h|--help          print info and exit
+
+Program name:
+       {yp,nis,}domainname=hostname -y
+       dnsdomainname=hostname -d
+
+Program options:
+    -a, --alias            alias names
+    -A, --all-fqdns        all long host names (FQDNs)
+    -b, --boot             set default hostname if none available
+    -d, --domain           DNS domain name
+    -f, --fqdn, --long     long host name (FQDN)
+    -F, --file             read host name or NIS domain name from given file
+    -i, --ip-address       addresses for the host name
+    -I, --all-ip-addresses all addresses for the host
+    -s, --short            short host name
+    -y, --yp, --nis        NIS/YP domain name
+
+Description:
+   This command can get or set the host name or the NIS domain name. You can
+   also get the DNS domain or the FQDN (fully qualified domain name).
+   Unless you are using bind or NIS for host lookups you can change the
+   FQDN (Fully Qualified Domain Name) and the DNS domain name (which is
+   part of the FQDN) in the /etc/hosts file.
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ hostname
+DESKTOP-EHJ0T9T
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: bond0: <BROADCAST,MULTICAST,MASTER> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 8e:94:e3:73:6e:3b brd ff:ff:ff:ff:ff:ff
+3: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 6e:b5:f2:5b:0f:8e brd ff:ff:ff:ff:ff:ff
+4: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+5: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+6: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:e5:23:06 brd ff:ff:ff:ff:ff:ff
+    inet 172.28.65.222/20 brd 172.28.79.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fee5:2306/64 scope link
+       valid_lft forever preferred_lft forever
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: bond0: <BROADCAST,MULTICAST,MASTER> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 8e:94:e3:73:6e:3b brd ff:ff:ff:ff:ff:ff
+3: dummy0: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 6e:b5:f2:5b:0f:8e brd ff:ff:ff:ff:ff:ff
+4: tunl0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+5: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN group default qlen 1000
+    link/sit 0.0.0.0 brd 0.0.0.0
+6: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:e5:23:06 brd ff:ff:ff:ff:ff:ff
+    inet 172.28.65.222/20 brd 172.28.79.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fee5:2306/64 scope link
+       valid_lft forever preferred_lft forever
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ifconifg
+Command 'ifconifg' not found, did you mean:
+  command 'ifconfig' from deb net-tools (1.60+git20181103.0eebece-1ubuntu5)
+Try: sudo apt install <deb name>
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ifconfig
+Command 'ifconfig' not found, but can be installed with:
+sudo apt install net-tools
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ifconfig
+Command 'ifconfig' not found, but can be installed with:
+sudo apt install net-tools
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ifConfig
+Command 'ifConfig' not found, did you mean:
+  command 'ifconfig' from deb net-tools (1.60+git20181103.0eebece-1ubuntu5)
+Try: sudo apt install <deb name>
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ifconfig
+Command 'ifconfig' not found, but can be installed with:
+sudo apt install net-tools
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ sudo apt ins
+tall net-tools
+[sudo] password for abhishek_shivade:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  net-tools
+0 upgraded, 1 newly installed, 0 to remove and 79 not upgraded.
+Need to get 204 kB of archives.
+After this operation, 819 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 net-tools amd64 1.60+git20181103.0eebece-1ubuntu5 [204 kB]
+Fetched 204 kB in 2s (98.6 kB/s)
+Selecting previously unselected package net-tools.
+(Reading database ... 24224 files and directories currently installed.)
+Preparing to unpack .../net-tools_1.60+git20181103.0eebece-1ubuntu5_amd64.de
+b ...
+Unpacking net-tools (1.60+git20181103.0eebece-1ubuntu5) ...
+Setting up net-tools (1.60+git20181103.0eebece-1ubuntu5) ...
+Processing triggers for man-db (2.10.2-1) ...
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.28.65.222  netmask 255.255.240.0  broadcast 172.28.79.255
+        inet6 fe80::215:5dff:fee5:2306  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:e5:23:06  txqueuelen 1000  (Ethernet)
+        RX packets 27110  bytes 40639982 (40.6 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7511  bytes 604139 (604.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls
+file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ cd ..
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ zip -v
+Command 'zip' not found, but can be installed with:
+sudo apt install zip
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ sudo apt install
+zip
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  unzip
+The following NEW packages will be installed:
+  unzip zip
+0 upgraded, 2 newly installed, 0 to remove and 79 not upgraded.
+Need to get 350 kB of archives.
+After this operation, 930 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 unzip amd64 6.0-26ubuntu3.2 [175 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 zip amd64 3.0-12build2 [176 kB]
+Fetched 350 kB in 3s (132 kB/s)
+Selecting previously unselected package unzip.
+(Reading database ... 24273 files and directories currently installed.)
+Preparing to unpack .../unzip_6.0-26ubuntu3.2_amd64.deb ...
+Unpacking unzip (6.0-26ubuntu3.2) ...
+Selecting previously unselected package zip.
+Preparing to unpack .../zip_3.0-12build2_amd64.deb ...
+Unpacking zip (3.0-12build2) ...
+Setting up unzip (6.0-26ubuntu3.2) ...
+Setting up zip (3.0-12build2) ...
+Processing triggers for man-db (2.10.2-1) ...
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ zip -v
+Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.
+This is Zip 3.0 (July 5th 2008), by Info-ZIP.
+Currently maintained by E. Gordon.  Please send bug reports to
+the authors using the web page at www.info-zip.org; see README for details.
+
+Latest sources and executables are at ftp://ftp.info-zip.org/pub/infozip,
+as of above date; see http://www.info-zip.org/ for other sites.
+
+Compiled with gcc 11.2.0 for Unix (Linux ELF).
+
+Zip special compilation options:
+        USE_EF_UT_TIME       (store Universal Time)
+        BZIP2_SUPPORT        (bzip2 library version 1.0.8, 13-Jul-2019)
+            bzip2 code and library copyright (c) Julian R Seward
+            (See the bzip2 license for terms of use)
+        SYMLINK_SUPPORT      (symbolic links supported)
+        LARGE_FILE_SUPPORT   (can read and write large files on file system)
+        ZIP64_SUPPORT        (use Zip64 to store large files in archives)
+        UNICODE_SUPPORT      (store and read UTF-8 Unicode paths)
+        STORE_UNIX_UIDs_GIDs (store UID/GID sizes/values using new extra field)
+        UIDGID_NOT_16BIT     (old Unix 16-bit UID/GID extra field not used)
+        [encryption, version 2.91 of 05 Jan 2007] (modified for Zip 3)
+
+Encryption notice:
+        The encryption code of this program is not copyrighted and is
+        put in the public domain.  It was originally written in Europe
+        and, to the best of our knowledge, can be freely distributed
+        in both source and object forms from any country, including
+        the USA under License Exception TSU of the U.S. Export
+        Administration Regulations (section 740.13(e)) of 6 June 2002.
+
+Zip environment options:
+             ZIP:  [none]
+          ZIPOPT:  [none]
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ man zip
+
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ zip docs
+
+zip error: Nothing to do! (docs.zip)
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ zip docs.zip
+
+zip error: Nothing to do! (docs.zip)
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ zip docs docs.zip
+        zip warning: name not matched: docs.zip
+
+zip error: Nothing to do! (docs.zip)
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ zip -r docs.zip
+
+zip error: Nothing to do! (docs.zip)
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ zip -r docs.zip docs
+  adding: docs/ (stored 0%)
+  adding: docs/file2.txt (deflated 23%)
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  docs.zip  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ man unzip
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ unzip -z docs.zip docs1
+Archive:  docs.zip
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  docs.zip  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ zip -r docs1.zip docs
+  adding: docs/ (stored 0%)
+  adding: docs/file2.txt (deflated 23%)
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  docs.zip  docs1.zip  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ unzip -z docs1.zip docs1
+Archive:  docs1.zip
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ mkdir docs1
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ unzip -z docs1.zip docs1
+Archive:  docs1.zip
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  docs.zip  docs1  docs1.zip  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls -l -a
+total 24
+drwxr-xr-x 4 abhishek_shivade abhishek_shivade 4096 Mar  7 19:14 .
+drwxr-xr-x 5 abhishek_shivade abhishek_shivade 4096 Mar  7 17:51 ..
+drwxr-xr-x 2 abhishek_shivade abhishek_shivade 4096 Mar  7 17:59 docs
+-rw-r--r-- 1 abhishek_shivade abhishek_shivade  333 Mar  7 19:08 docs.zip
+drwxr-xr-x 2 abhishek_shivade abhishek_shivade 4096 Mar  7 19:14 docs1
+-rw-r--r-- 1 abhishek_shivade abhishek_shivade  333 Mar  7 19:14 docs1.zip
+-rw-r--r-- 1 abhishek_shivade abhishek_shivade    0 Mar  7 17:52 file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ tree
+.
+├── docs
+│   └── file2.txt
+├── docs.zip
+├── docs1
+├── docs1.zip
+└── file1.txt
+
+2 directories, 4 files
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ unzip -z docs1.zip -d docs1
+caution:  not extracting; -d ignored
+Archive:  docs1.zip
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  docs.zip  docs1  docs1.zip  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ tree
+.
+├── docs
+│   └── file2.txt
+├── docs.zip
+├── docs1
+├── docs1.zip
+└── file1.txt
+
+2 directories, 4 files
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ unzip docs.zip -d docs1
+Archive:  docs.zip
+   creating: docs1/docs/
+  inflating: docs1/docs/file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ tree
+.
+├── docs
+│   └── file2.txt
+├── docs.zip
+├── docs1
+│   └── docs
+│       └── file2.txt
+├── docs1.zip
+└── file1.txt
+
+3 directories, 5 files
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cd docs
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ ls
+file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ vi file2.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment/docs$ cd ..
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  docs.zip  docs1  docs1.zip  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ vi file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ cat file1.txt
+
+Hello Ubuntu...........
+This file is edited with vi editor
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  docs.zip  docs1  docs1.zip  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ tr "file" "text file" file1.txt
+tr: extra operand ‘file1.txt’
+Try 'tr --help' for more information.
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ sed '/sfile/text file/g' file1.txt
+sed: -e expression #1, char 13: unknown command: `f'
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ ls
+docs  docs.zip  docs1  docs1.zip  file1.txt
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ sed 's/file/text file/g' fil
+e1.txt
+
+Hello Ubuntu...........
+This text file is edited with vi editor
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$ tree
+.
+├── docs
+│   └── file2.txt
+├── docs.zip
+├── docs1
+│   └── docs
+│       └── file2.txt
+├── docs1.zip
+└── file1.txt
+
+3 directories, 5 files
+abhishek_shivade@DESKTOP-EHJ0T9T:~/CDAC24/LinuxAssignment$

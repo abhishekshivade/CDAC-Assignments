@@ -1,0 +1,8 @@
+1) Explain the components of the JDK.
+2) Differentiate between JDK, JVM, and JRE.
+3) What is the role of the JVM in Java? & How does the JVM execute Java code?
+4) Explain the memory management system of the JVM.
+5) What are the JIT compiler and its role in the JVM? What is the bytecode and why is it important for Java?
+6) Describe the architecture of the JVM.
+7) How does Java achieve platform independence through the JVM?
+8) What is the significance of the class loader in Java? What is the process of garbage collection in Java.
