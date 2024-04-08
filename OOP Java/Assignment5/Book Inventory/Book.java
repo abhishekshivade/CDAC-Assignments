@@ -1,6 +1,6 @@
 class Book{
 	private String title, author, publisher, isbn;
-	private int year, quanity;
+	private int year, quantity;
 	private double price;
 
 	Book(){
@@ -24,7 +24,7 @@ class Book{
 	}
 
 	void setPublisher(String publisher){
-		this.publisher=publsiher;
+		this.publisher=publisher;
 	}
 	
 	String getPublisher(){
@@ -55,13 +55,33 @@ class Book{
 		return this.price;
 	}
 
-	void setQuantity(String quantity){
+	void setQuantity(int quantity){
 		this.quantity=quantity;
 	}
 	
-	String getQuantitty(){
+	int getQuantitty(){
 		return this.quantity;
 	}
 
-	int 
+	void showBook(){
+		System.out.println("Title 	: "+title);
+		System.out.println("Author 	: "+author);
+		System.out.println("Publisher 	: "+publisher);
+		System.out.println("Isbn 	: "+isbn);
+		System.out.println("Year 	: "+year);
+		System.out.println("Price 	: "+price);
+		System.out.println("Qunatity 	: "+quantity);
+	}
+
+	void increaseQuantity(int quantity){
+		this.quantity+=quantity;
+	}
+
+	void decreaseQuanity(int quantity){
+		this.quantity-=quantity;
+	}
+
+	double getInventoryValue(){
+		return quantity*price;
+	}
 }
