@@ -1,0 +1,32 @@
+1) Write a query that produces all pairs of salespeople who are living in the same
+city. Exclude combinations of salespeople with themselves as well as duplicate
+rows with the order reversed.
+
+mysql> select s.snum, s.sname, s1.snum, s1.sname, s.city from salespeople s join salespeople s1 on s1.city=s.city where s.sname!=s1.sname;
++------+--------+------+--------+--------+
+| snum | sname  | snum | sname  | city   |
++------+--------+------+--------+--------+
+| 1004 | Motika | 1001 | Peel   | London |
+| 1001 | Peel   | 1004 | Motika | London |
++------+--------+------+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select s.snum, s.sname, s1.snum, s1.sname, s.city from salespeople s join salespeople s1 on s1.city=s.city where s.snum<s1.snum;
++------+-------+------+--------+--------+
+| snum | sname | snum | sname  | city   |
++------+-------+------+--------+--------+
+| 1001 | Peel  | 1004 | Motika | London |
++------+-------+------+--------+--------+
+1 row in set (0.00 sec)
+
+2) Write a query that produces the names and cities of all customers with the same
+rating as Hoffman.
+
+mysql> select c.cname, c.city from customers c join customers c1 on c.rating=c1.rating where c1.cname='hoffin' and c.cname!='hoffin';
++---------+--------+
+| cname   | city   |
++---------+--------+
+| Clemens | London |
+| Pereira | Rome   |
++---------+--------+
+2 rows in set (0.00 sec)

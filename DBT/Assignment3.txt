@@ -1,0 +1,5 @@
+1) Does ANSI recognize the data type DATE?
+-> Yes, ANSI recognize the date type as a Gregorian calender.
+
+2) Which subdivision of SQL is used to insert values in tables?
+-> From DML we use insert into command to insert value or data in the table.

@@ -1,0 +1,11 @@
+1. Which field of the customers table is the primary key?
+-> Cnum has primary key.
+
+2. What is the 4th columun of Customers table?
+-> Rating
+
+3. What is another word for row? for column?
+-> row are called Records and column called as field.
+
+4. Why isn't it possible to see the first five rows of a table?
+-> Rows are unsorted and stored and display by address of rows.

@@ -1,0 +1,78 @@
+1) Write a query that counts all orders for October 3.
+
+mysql> select count(cnum) orders from orders where odate='1990-10-3';
++--------+
+| orders |
++--------+
+|      5 |
++--------+
+1 row in set (0.00 sec)
+
+2) Write a query that counts the number of different non-NULL city values in the
+Customers table.
+
+mysql> select count(cnum) count from customers where city!=null;
++-------+
+| count |
++-------+
+|     0 |
++-------+
+1 row in set (0.00 sec)
+
+3) Write a query that selects each customer’s smallest order.
+
+mysql> select o.cnum, c.cname, min(o.amt) as smallestOrder from orders o joi
+n customers c on o.cnum=c.cnum group by o.cnum, c.cname;
++------+----------+---------------+
+| cnum | cname    | smallestOrder |
++------+----------+---------------+
+| 2008 | Cisneros |         18.69 |
+| 2001 | Hoffin   |        767.19 |
+| 2007 | Pereira  |        1900.1 |
+| 2003 | Liu      |       5160.45 |
+| 2002 | Giovanni |       1713.23 |
+| 2004 | Grass    |         75.75 |
+| 2006 | Clemens  |          4723 |
++------+----------+---------------+
+7 rows in set (0.00 sec)
+
+4) Write a query that selects the first customer, in alphabetical order, whose name
+begins with G.
+
+mysql> select * from customers where cname like 'g%' limit 1;
++------+----------+------+--------+------+
+| Cnum | Cname    | City | Rating | Snum |
++------+----------+------+--------+------+
+| 2002 | Giovanni | Rome |    200 | 1003 |
++------+----------+------+--------+------+
+1 row in set (0.00 sec)
+
+5) Write a query that selects the highest rating in each city.
+
+mysql> select c.city, max(c.rating) as rating from customers c group by c.ci
+ty;
++----------+--------+
+| city     | rating |
++----------+--------+
+| London   |    100 |
+| Rome     |    200 |
+| San Jose |    300 |
+| Berlin   |    300 |
++----------+--------+
+4 rows in set (0.00 sec)
+
+6) Write a query that counts the number of salespeople registering orders for each
+day. (If a salesperson has more than one order on a given day, he or she should be
+counted only once.).
+
+mysql> select odate, count(distinct snum) as s_people from orders group by o
+date;
++------------+----------+
+| odate      | s_people |
++------------+----------+
+| 1990-10-03 |        4 |
+| 1990-10-04 |        2 |
+| 1990-10-05 |        1 |
+| 1990-10-06 |        2 |
++------------+----------+
+4 rows in set (0.00 sec)

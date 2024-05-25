@@ -1,5 +1,5 @@
-// Write an efficient program in Java or C++ to reverse the words in a given String sentence. For example, if the input is "Java is best," then your program should print "best is Java". There is no restriction on preserving white space.
-
+/* Write an efficient program in Java or C++ to reverse the words in a given String sentence. For example, if the input is "Java is best," then your program should print "best is Java". There is no restriction on preserving white space.
+*/
 public class Que10 {
     public static void main(String[] args) {
         String s="Java is best";

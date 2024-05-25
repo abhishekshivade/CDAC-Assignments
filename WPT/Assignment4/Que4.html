@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap demo</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      span {
+        font-weight: bold;
+        color: white;
+      }
+
+      .hightlight {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body  style="text-align: center;">
+    <p
+      style="
+        color: blue;
+        text-decoration: underline;
+        margin-top: 100px;
+        width: fit-content;
+        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 50px;
+      "
+      id="highlight"
+      onmouseenter="highlightWords()"
+      onmouseleave="removeHighlight()"
+    >
+      [On mouse over here bold words of the following paragraph will be
+      highlighted]
+    </p>
+
+    <p id="para1" style="width: fit-content; margin: auto">
+      <span class="para">We</span> have just started
+      <span class="para">this</span> section for the users (<span class="para"
+        >beginner</span
+      > to intermeidate) who <span class="para">want</span> to work with
+      <span class="para">various</span>JavaScript
+      <span class="para">problems</span> and write scripts online to
+      <span class="para">test</span> their JavaScript
+      <span class="para">skill</span>.
+    </p>
+
+    <script>
+
+      function highlightWords() {
+        var paragraph = document.getElementById("para1");
+        var boldWords = paragraph.getElementsByTagName("span");
+        for (var i = 0; i < boldWords.length; i++) {
+          boldWords[i].style.color='brown';
+        }
+      }
+
+      function removeHighlight() {
+        var paragraph = document.getElementById("para1");
+        var boldWords = paragraph.getElementsByTagName("span");
+        for (var i = 0; i < boldWords.length; i++) {
+          boldWords[i].style.color='white';
+        }
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

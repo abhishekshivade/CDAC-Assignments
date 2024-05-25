@@ -1,0 +1,70 @@
+1) Assume there is a table called Multicust, with all of the same column definitions
+as Salespeople. Write a command that inserts all salespeople with more than one
+customer into this table.
+
+mysql> insert into multicust (snum,sname,city,comm) select snum,sname,city,c
+omm from salespeople where snum in (select snum from orders group by snum ha
+ving count(distinct cnum)>1);
+Query OK, 1 row affected (0.01 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> select * from multicust;
++------+--------+--------+------+
+| snum | sname  | city   | comm |
++------+--------+--------+------+
+| 1004 | Motika | London | 0.11 |
++------+--------+--------+------+
+1 row in set (0.00 sec)
+
+2) Write a command that deletes all customers with no current orders.
+
+mysql> select * from customers;
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffin   | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    300 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2006 | Clemens  | London   |    100 | 1001 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    200 | 1004 |
++------+----------+----------+--------+------+
+7 rows in set (0.00 sec)
+
+mysql> delete from customers where cnum not in (select distinct cnum from or
+ders);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from customers;
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffin   | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    300 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    200 | 1004 |
++------+----------+----------+--------+------+
+6 rows in set (0.00 sec)
+
+3) Write a command that increases by twenty percent the commissions of all
+salespeople with total orders above Rs. 3,000.
+
+mysql> update salespeople set comm=comm+0.20 where snum=(select snum from orders group by snum having sum(amt)>3000);
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from salespeople;
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1002 | Srres   | San Jose  | 0.13 |
+| 1004 | Motika  | London    | 0.31 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
+| 1100 | Blanco  | San Jose  | NULL |
++------+---------+-----------+------+
+6 rows in set (0.00 sec)

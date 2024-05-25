@@ -1,5 +1,6 @@
 /*
 The Java code for printing a pyramid is given below:
+
     *
    * *
   * * *

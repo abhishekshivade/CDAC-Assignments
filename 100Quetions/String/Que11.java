@@ -1,4 +1,5 @@
-// Write an efficient function in C/C++ or Java to print the smallest substring in a given string containing all characters of another String. For example, if the given String is "this is a test string" and "tist", then the output should be "t stri".
+/* Write an efficient function in C/C++ or Java to print the smallest substring in a given string containing all characters of another String. For example, if the given String is "this is a test string" and "tist", then the output should be "t stri".
+*/
 
 public class Que11 {
     public static void main(String[] args) {

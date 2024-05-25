@@ -1,0 +1,64 @@
+1) Write a query that selects all customers whose ratings are equal to or greater than
+ANY of Serres’.
+
+select c.* from customers c where c.Rating >= (
+select max(c1.Rating) from customers c1 join orders o on c1.Cnum = o.Cnum join salespeople s on o.Snum = s.Snum where s.Sname = 'Srres'
+);
+
+select * from customers where Rating >= all(select c1.Rating from customers c1 join orders o on c1.Cnum = o.Cnum join salespeople s on o.Snum = s.Snum where s.Sname = 'Srres');
+
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
++------+----------+----------+--------+------+
+2 rows in set (0.00 sec)
+
+2) Write a query using ANY or ALL that will find all salespeople who have no
+customers located in their city.
+
+mysql> select s.* from salespeople s where s.city != all(select c.city from customers c);
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
++------+---------+-----------+------+
+2 rows in set (0.00 sec)
+
+3) Write a query that selects all orders for amounts greater than any for the
+customers in London.
+
+mysql> select o.* from orders o where o.amt>any(select o.onum from orders o
+join customers c on o.cnum=c.cnum where c.city='London');
++------+---------+------------+------+------+
+| Onum | Amt     | Odate      | Cnum | Snum |
++------+---------+------------+------+------+
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
+| 3008 |    4723 | 1990-10-05 | 2006 | 1001 |
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
++------+---------+------------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> select o.* from orders o where o.amt>any(select max(o.amt) from orders o join customers c on o.cnum=c.cnum where c.city='London');
+Empty set (0.00 sec)
+
+4) Write the above query using MIN or MAX
+
+mysql> select o.* from orders o where o.amt>any(select max(o.amt) from orders o join customers c on o.cnum=c.cnum where c.city='London');
+
+mysql> select o.* from orders o where o.amt>any(select min(o.amt) from orders o join customers c on o.cnum=c.cnum where c.city='London');
++------+---------+------------+------+------+
+| Onum | Amt     | Odate      | Cnum | Snum |
++------+---------+------------+------+------+
+| 3002 |  1900.1 | 1990-10-03 | 2007 | 1004 |
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
+| 3006 | 1998.16 | 1990-10-03 | 2008 | 1007 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3008 |    4723 | 1990-10-05 | 2006 | 1001 |
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
++------+---------+------------+------+------+
+7 rows in set (0.00 sec)
+Empty set (0.00 sec)

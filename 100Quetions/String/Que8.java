@@ -1,3 +1,5 @@
+/*Write an efficient program to print all permutations of a given String in Java/C/Python or any programming language of your choice. For example, if given input is "123" then your program should print all 6 permutations e.g. "123", "132", "213", "231", "312" and "321".
+*/
 import java.util.Arrays;
 
 public class Que8 {

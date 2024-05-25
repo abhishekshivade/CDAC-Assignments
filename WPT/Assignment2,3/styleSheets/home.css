@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#navbar{
+    background-color: #191a1a;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navLink{
+    margin-left: 20px;
+}
+
+.subNavDiv{
+    text-align: center;
+    font-weight: bolder;
+    font-size: large;
+    margin-left: 50px;
+}
+
+.subNavDiv img{
+    border: 3px solid #eeb988;
+    border-radius: 50px;
+    width: 55px;
+    margin-bottom: 5px;
+}
+
+hl{
+    border-top: 2px solid black; 
+    width: 300px;
+    height: 0px;
+}

@@ -1,0 +1,97 @@
+1) Write a query that lists each order number followed by the name of the customer
+who made the order.
+
+mysql> select o.onum, c.cname from orders o join customers c on o.cnum=c.cnu
+m;
++------+----------+
+| onum | cname    |
++------+----------+
+| 3001 | Cisneros |
+| 3003 | Hoffin   |
+| 3002 | Pereira  |
+| 3005 | Liu      |
+| 3006 | Cisneros |
+| 3009 | Giovanni |
+| 3007 | Grass    |
+| 3008 | Clemens  |
+| 3010 | Grass    |
+| 3011 | Clemens  |
++------+----------+
+10 rows in set (0.00 sec)
+
+2) Write a query that gives the names of both the salesperson and the customer for
+each order along with the order number.
+
+mysql> select o.onum, c.cname, s.sname from orders o join customers c on o.c
+num=c.cnum join salespeople s on o.snum=s.snum;
++------+----------+---------+
+| onum | cname    | sname   |
++------+----------+---------+
+| 3003 | Hoffin   | Peel    |
+| 3009 | Giovanni | Axelrod |
+| 3005 | Liu      | Srres   |
+| 3010 | Grass    | Srres   |
+| 3007 | Grass    | Srres   |
+| 3011 | Clemens  | Peel    |
+| 3008 | Clemens  | Peel    |
+| 3006 | Cisneros | Rifkin  |
+| 3001 | Cisneros | Rifkin  |
+| 3002 | Pereira  | Motika  |
++------+----------+-------
+
+3) Write a query that produces all customers serviced by salespeople with a
+commission above 12%. Output the customer’s name, the salesperson’s name,
+and the salesperson’s rate of commission.
+
+mysql> select c.cname, s.sname, s.comm from customers c join orders o on o.cnum=c.cnum join salespeople s on o.snum=s.snum where s.comm>0.12;
++----------+--------+------+
+| cname    | sname  | comm |
++----------+--------+------+
+| Liu      | Srres  | 0.13 |
+| Grass    | Srres  | 0.13 |
+| Grass    | Srres  | 0.13 |
+| Cisneros | Rifkin | 0.15 |
+| Cisneros | Rifkin | 0.15 |
++----------+--------+------+
+5 rows in set (0.00 sec)
+
+4) Write a query that calculates the amount of the salesperson’s commission on each
+order by a customer with a rating above 100.
+
+mysql> select o.onum, o.amt*s.comm as amt from orders o join salespeople s o
+n o.snum=s.snum;
++------+--------------------+
+| onum | amt                |
++------+--------------------+
+| 3001 |  2.803500191509727 |
+| 3003 |  92.06279823520481 |
+| 3002 | 209.01099618190528 |
+| 3005 |  670.8585007836809 |
+| 3006 | 299.72401703691503 |
+| 3009 |  171.3230005997866 |
+| 3007 |  9.847499638795853 |
+| 3008 |  566.7599873319268 |
+| 3010 | 170.29348740601563 |
+| 3011 | 1187.0255594054106 |
++------+--------------------+
+10 rows in set (0.00 sec)
+
+mysql> select o.onum, round(o.amt*s.comm) as amt from orders o join salespeo
+ple s on o.snum=s.snum;
++------+------+
+| onum | amt  |
++------+------+
+| 3001 |    3 |
+| 3003 |   92 |
+| 3002 |  209 |
+| 3005 |  671 |
+| 3006 |  300 |
+| 3009 |  171 |
+| 3007 |   10 |
+| 3008 |  567 |
+| 3010 |  170 |
+| 3011 | 1187 |
++------+------+
+10 rows in set (0.00 sec)
+
+mysql>
